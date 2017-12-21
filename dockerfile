@@ -32,5 +32,5 @@ RUN echo " --- Node module collection starts --- " \
 
 # USER $username
 # ENTRYPOINT [ "index.sh" ]
-ENTRYPOINT ["/workspace/index.sh", "$username"]
+ENTRYPOINT ["/bin/sh", "/workspace/index.sh", "$username"]
 CMD [ "npm", "start" ]
