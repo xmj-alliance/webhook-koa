@@ -3,3 +3,7 @@ node_modules
 .gitignore
 .gitkeep
 *.lock
+/actions/*
+!/actions/actions.js
+!/actions/actions.sh
+!/actions/package.json

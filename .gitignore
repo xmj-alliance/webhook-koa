@@ -60,4 +60,7 @@ typings/
 # Site Specific
 *.lock
 /.vscode/*
+/actions/*
+!/actions/actions.example.js
+!/actions/actions.example.sh
 
