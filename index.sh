@@ -8,13 +8,15 @@ username=$EXEC_USER
 
 userid=${EXEC_USER_ID}
 
-echo "Summoning $username - UID:$userid"
+echo "Installing additional packages ...";
+# -> List your additionally needed packages in actions/package.list
+xargs apk add < "actions/package.list";
+
+echo "Summoning $username - UID:$userid ..."
 adduser $username -u $userid -D -s /bin/sh
-# usermod -o -u $userid $username
-# useradd --shell /bin/sh -u $userid -o -c "" -m user
-# export HOME=/home/user
 chown -R $username /workspace
 chmod -R 755 /workspace
+
+# su-exec $username "$@"
 su-exec $username /bin/sh
-exec su-exec $username "$@"
 

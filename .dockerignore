@@ -7,3 +7,4 @@ node_modules
 !/actions/actions.js
 !/actions/actions.sh
 !/actions/package.json
+!/actions/package.list
