@@ -4,14 +4,17 @@
 
 username=$EXEC_USER
 
-## production settings
+# Add local user
 
-# chown -R $username /src
-# chmod -R 755 /src
-# sudo -u $username /bin/sh <<BLOCK
-# npm start
-# BLOCK
+userid=${EXEC_USER_ID}
 
-# dev running as root to see output in teminal
-npm start
-sudo -u $username /bin/sh
+echo "Summoning $username - UID:$userid"
+adduser $username -u $userid -D -s /bin/sh
+# usermod -o -u $userid $username
+# useradd --shell /bin/sh -u $userid -o -c "" -m user
+# export HOME=/home/user
+chown -R $username /workspace
+chmod -R 755 /workspace
+su-exec $username /bin/sh
+exec su-exec $username "$@"
+
