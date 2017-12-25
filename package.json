@@ -4,7 +4,7 @@
   "description": "Dockerized webhook powered by node.js koa usually used to automatically 'git pull'",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
+    "start": "nodemon .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,5 +26,8 @@
     "koa-bodyparser": "^4.2.0",
     "koa-logger": "^3.1.0",
     "koa-router": "^7.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.3"
   }
 }
