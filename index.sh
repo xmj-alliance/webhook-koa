@@ -9,9 +9,15 @@ username=$EXEC_USER
 userid=${EXEC_USER_ID}
 
 echo "Installing additional packages ...";
-# -> List your additionally needed packages in actions/package.list
+# -> Install packages from actions/package.list in actions folder
 apk update
-xargs apk add < "actions/package.list";
+xargs apk add < "/workspace/actions/package.list";
+
+echo "Collecting additional node modules ...";
+# -> collect node modules from provided package.json in actions folder
+cd /workspace/actions
+npm install
+cd /workspace
 
 echo "Summoning $username - UID:$userid ..."
 adduser $username -u $userid -D -s /bin/sh

@@ -25,8 +25,6 @@ VOLUME ["/src", "/workspace/actions"]
 RUN echo " --- Node module collection starts --- " \
  # node module collection
  && npm install \
- && cd actions \
- && npm install \
  && npm cache clean --force
 
 ENV EXEC_USER=valorad
