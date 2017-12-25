@@ -17,6 +17,6 @@ adduser $username -u $userid -D -s /bin/sh
 chown -R $username /workspace
 chmod -R 755 /workspace
 
-# su-exec $username "$@"
-su-exec $username /bin/sh
+su-exec $username "$@"
+
 

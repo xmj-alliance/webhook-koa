@@ -8,7 +8,7 @@ This program supports Linux only (probably macOS as well) since it's originally 
 ## Preparation
 - If you decide to run bash scripts:
   - Create an `actions.sh` in `/actions` folder. You may follow the given example there.
-  - (Optional) Create a `package.list` file in `/actions` as well, then list your additional system packages there, each entry taking up one line. For example, you are going to execute `git pull` but there is no `git` pre installed in Alpine linux, so in your `package.list`, you have to list:
+  - (Optional) Create a `package.list` file in `/actions` as well, then list your additional system packages there, each entry taking up one line. For example, you are going to execute `git pull` but there is no `git` pre installed in Alpine Linux, so in your `package.list`, you have to list:
   ```
   git
   ```
@@ -23,7 +23,7 @@ After preparation, there are two ways to set this up:
 ``` bash
   docker build . -t webhook-koa
   docker run -d -p 14546:14546 --name webhook-koa-c1 -e EXEC_USER=$USER -e EXEC_USER_ID=$UID -v /path/to/your/source/code:/src webhook-koa
-  # or when "/src" is in another docker container:
+  # or when "/src" is in another docker container, but make sure you have access permission:
   # docker run -d -p 14546:14546 --name webhook-koa-c1 -e EXEC_USER=$USER -e EXEC_USER_ID=$UID  --volumes-from [Container_ID] webhook-koa
 ```
 - Manually:

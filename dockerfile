@@ -27,4 +27,4 @@ ENV EXEC_USER=valorad
 ENV EXEC_USER_ID=1000
 
 ENTRYPOINT ["/workspace/index.sh"]
-CMD npm start
+CMD npm start && /bin/sh
