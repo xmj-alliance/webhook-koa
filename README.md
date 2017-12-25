@@ -1,5 +1,5 @@
 # webhook-koa
-Highly customizable webhook powered by node.js koa. Automatically executes bash scripts and JavaScript on remote POST request. Availabe as a docker image based on `alpine:latest`, acting as a simple workflow.
+Highly customizable webhook powered by node.js koa. Automatically executes bash scripts and JavaScript on remote POST request. Available  as a docker image based on `alpine:latest`, acting as a simple workflow.
 
 ## OS requirement
 This program supports Linux only (probably macOS as well) since it's originally been designed as a program running in docker containers.
@@ -21,10 +21,13 @@ This program supports Linux only (probably macOS as well) since it's originally 
 After preparation, there are two ways to set this up:
 - Via Docker: 
 ``` bash
-  docker build . -t webhook-koa
-  docker run -d -p 14546:14546 --name webhook-koa-c1 -e EXEC_USER=$USER -e EXEC_USER_ID=$UID -v /path/to/your/source/code:/src webhook-koa
+  docker run -d -p 14546:14546 --name webhook-koa-c1 \
+  -e EXEC_USER=$USER -e EXEC_USER_ID=$UID \
+  -v /path/to/your/source/code:/src \
+  -v /path/to/actions:/workspace/actions \
+  valorad/webhook-koa
   # or when "/src" is in another docker container, but make sure you have access permission:
-  # docker run -d -p 14546:14546 --name webhook-koa-c1 -e EXEC_USER=$USER -e EXEC_USER_ID=$UID  --volumes-from [Container_ID] webhook-koa
+  # docker run ... --volumes-from [Container_ID] ... valorad/webhook-koa
 ```
 - Manually:
 ``` bash
