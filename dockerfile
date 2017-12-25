@@ -10,8 +10,6 @@ RUN echo " --- Software installation starts --- " \
  && apk add nodejs nodejs-npm su-exec \
  && rm -rf /var/cache/apk/*
 
-# ARG username=valorad
-
 VOLUME ["/src"]
 
 ADD . /workspace
@@ -24,15 +22,6 @@ RUN echo " --- Node module collection starts --- " \
  && cd actions \
  && npm install \
  && npm cache clean --force
-
-# RUN echo " --- User initialization starts --- " \
-#  # new normal user and his permission setup
-#  && adduser $username -D -H -s /bin/sh \
-#  && chmod -R 755 /workspace
-#  && chmod -R 755 /src \
-#  && chown -R $username /src
-
-# USER $username
 
 ENV EXEC_USER=valorad
 ENV EXEC_USER_ID=1000
