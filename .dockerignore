@@ -4,7 +4,4 @@ node_modules
 .gitkeep
 *.lock
 /actions/*
-!/actions/actions.js
-!/actions/actions.sh
-!/actions/package.json
-!/actions/package.list
+!/actions/.dockerkeep

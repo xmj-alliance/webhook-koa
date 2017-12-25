@@ -10,6 +10,7 @@ userid=${EXEC_USER_ID}
 
 echo "Installing additional packages ...";
 # -> List your additionally needed packages in actions/package.list
+apk update
 xargs apk add < "actions/package.list";
 
 echo "Summoning $username - UID:$userid ..."

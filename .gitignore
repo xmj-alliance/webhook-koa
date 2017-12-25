@@ -63,4 +63,5 @@ typings/
 /actions/*
 !/actions/actions.example.js
 !/actions/actions.example.sh
+!/actions/.dockerkeep
 

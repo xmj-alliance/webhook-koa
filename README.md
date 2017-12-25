@@ -1,5 +1,5 @@
 # webhook-koa
-Highly customizable webhook powered by node.js koa. Automatically executes bash scripts and JavaScript on remote POST request. Availabe as a docker image based on `alpine:edge`, acting as a simple workflow.
+Highly customizable webhook powered by node.js koa. Automatically executes bash scripts and JavaScript on remote POST request. Availabe as a docker image based on `alpine:latest`, acting as a simple workflow.
 
 ## OS requirement
 This program supports Linux only (probably macOS as well) since it's originally been designed as a program running in docker containers.
