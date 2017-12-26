@@ -1,4 +1,4 @@
-[![Docker Stars](https://img.shields.io/docker/stars/_/ubuntu.svg?style=flat-square)](https://hub.docker.com/r/valorad/webhook-koa/)
+[![Docker Stars](https://img.shields.io/docker/stars/valorad/webhook-koa.svg?style=flat-square)](https://hub.docker.com/r/valorad/webhook-koa/)
 
 # webhook-koa
 Highly customizable webhook powered by node.js koa. Automatically executes bash scripts and JavaScript on remote POST request. Available  as a docker image based on `alpine:latest`, acting as a simple workflow.
