@@ -63,6 +63,11 @@ router.post('/payload', async (ctx) => {
 
 });
 
+if (existsSync("./actions/ext.js")) {
+  const { extAPI } = require("./actions/ext.js");
+  router.use('/ext', extAPI.routes(), extAPI.allowedMethods())
+}
+
 app.use(router.routes())
 .use(router.allowedMethods());
 
