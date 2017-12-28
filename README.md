@@ -12,13 +12,15 @@ This program supports Linux only (probably macOS as well) since it's originally 
 - If you decide to run bash scripts:
   - Create an `actions.sh` in `actions` folder. You may follow the given example in this repo.
   - (Optional) Create a `package.list` file in `actions` as well, then list your additional system packages there, each entry taking up one line. 
-  ```
-  git
-  nice-packageA
-  potato
-  sugar
-  kitten
-  ```
+
+```
+git
+nice-packageA
+potato
+sugar
+kitten
+```
+
   For example, you are going to execute `git pull` but there is no `git` pre installed in Alpine Linux, so in your `package.list`, you have to list `git` out.
   
   Please note that comments are currently not supported in that list.
