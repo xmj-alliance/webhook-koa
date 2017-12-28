@@ -15,8 +15,9 @@ This program supports Linux only (probably macOS as well) since it's originally 
   ```
   git
   nice-packageA
-  patato
-  sugar
+  potato
+  sugar
+  kitten
   ```
   For example, you are going to execute `git pull` but there is no `git` pre installed in Alpine Linux, so in your `package.list`, you have to list `git` out.
   
